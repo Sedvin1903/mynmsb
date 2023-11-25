@@ -21,9 +21,9 @@ const DeleteStock = () => {
       if (response1 === "null") {
         alert("Stock Not Found!");
       } else {
-        const response2 = await deleteStock(stockId);
+    /*    const response2 = await deleteStock(stockId);
         alert("Stock deleted successfully!");
-      }
+      }*/
 
       resetForm();
     } catch (err) {
