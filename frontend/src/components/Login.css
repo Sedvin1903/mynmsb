@@ -1,0 +1,44 @@
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("https://web-static.wrike.com/blog/content/uploads/2022/03/iStock-1316897145.jpg?av=3e7a0749745c5587cefa430090d67c7b");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no;
+  height: 100vh;
+}
+
+.login-card {
+  width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px;
+}
+
+.btn-primary {
+  width: 100%;
+  background-color: #007bff;
+  border-color: #007bff;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
