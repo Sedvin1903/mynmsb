@@ -13,7 +13,7 @@ const UpdateStock = () => {
     stockPrice: 0,
     stockQuantity: 0,
   });
-  const navigate = useNavigate();
+//  const navigate = useNavigate();
   const { requireAuth } = useAuth();
 
   useEffect(() => {
