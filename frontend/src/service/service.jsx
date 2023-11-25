@@ -6,7 +6,7 @@ import axios from "axios";
 export const fetchAllStocks = async () => {
   try {
     const response = await axios.get(
-      "https://sias-backend.onrender.com:8081/api/v1/stock/getAll"
+      "https://sias-backend.onrender.com/api/v1/stock/getAll"
     );
     return response.data;
   } catch (error) {
@@ -19,7 +19,7 @@ export const fetchAllStocks = async () => {
 export const searchStockById = async (stockId) => {
   try {
     const response = await axios.get(
-      `https://sias-backend.onrender.com:8081/api/v1/stock/search/${stockId}`
+      `https://sias-backend.onrender.com/api/v1/stock/search/${stockId}`
     );
     return response.data;
   } catch (error) {
@@ -41,7 +41,7 @@ export const getStatusColor = (status) => {
 // Function to add a new stock
 export const addStock = async (data) => {
   try {
-    await axios.post("https://sias-backend.onrender.com:8081/api/v1/stock/save", data);
+    await axios.post("https://sias-backend.onrender.com/api/v1/stock/save", data);
   } catch (error) {
     console.error("Error adding stock:", error);
     throw error;
@@ -51,7 +51,7 @@ export const addStock = async (data) => {
 // Function to update an existing stock
 export const updateStock = async (stockId, data) => {
   try {
-    await axios.put(`https://sias-backend.onrender.com:8081/api/v1/stock/edit/${stockId}`, data);
+    await axios.put(`https://sias-backend.onrender.com/api/v1/stock/edit/${stockId}`, data);
   } catch (error) {
     console.error("Error updating stock:", error);
     throw error;
@@ -61,7 +61,7 @@ export const updateStock = async (stockId, data) => {
 // Function to delete a stock
 export const deleteStock = async (stockId) => {
   try {
-    await axios.delete(`https://sias-backend.onrender.com:8081/api/v1/stock/delete/${stockId}`);
+    await axios.delete(`https://sias-backend.onrender.com/api/v1/stock/delete/${stockId}`);
   } catch (error) {
     console.error("Error deleting stock:", error);
     throw error;
