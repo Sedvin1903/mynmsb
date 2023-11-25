@@ -1,6 +1,6 @@
 // Home.jsx
 import React, { useState, useEffect } from "react";
-import {Link,useNavigate} from "react-router-dom"; //Routes,Route,BrowserRouter as Router
+import {Link} from "react-router-dom"; //Routes,Route,BrowserRouter as Router,useNavigate
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Home.css";
 import {
@@ -14,10 +14,10 @@ function Home() {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [allStocks, setAllStocks] = useState([]);
-  const [authenticated, setAuthenticated] = useState();
+ // const [authenticated, setAuthenticated] = useState();
   const [showSearchResults, setShowSearchResults] = useState(false);
   const [stockNotFound, setStockNotFound] = useState(false);
-  const { requireAuth } = useAuth();
+//  const { requireAuth } = useAuth();
 
   // Check if the user is authenticated before rendering the component
  // requireAuth();
