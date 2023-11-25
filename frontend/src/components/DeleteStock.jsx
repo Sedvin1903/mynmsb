@@ -22,7 +22,7 @@ const DeleteStock = () => {
         alert("Stock Not Found!");
       } 
       else {
-      const response2 = await deleteStock(stockId);
+      await deleteStock(stockId);
   alert("Stock deleted successfully!");
       }
 
