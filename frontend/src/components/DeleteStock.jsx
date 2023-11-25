@@ -1,7 +1,7 @@
 // DeleteStock.jsx
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { searchStockById } from "../service/service";
+import { searchStockById,deleteStock } from "../service/service";
 import useAuth from "../service/useAuth";
 
 const DeleteStock = () => {
@@ -22,8 +22,9 @@ const DeleteStock = () => {
         alert("Stock Not Found!");
       } 
       else {
-       await deleteStock(stockId);
-        alert("Stock deleted successfully!");
+      const response1 = await deleteStock(stockId);
+         if (response2)
+         {alert("Stock deleted successfully!");}
       }
 
       resetForm();
