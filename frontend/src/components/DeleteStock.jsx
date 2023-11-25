@@ -6,7 +6,7 @@ import useAuth from "../service/useAuth";
 
 const DeleteStock = () => {
   const [stockId, setStockId] = useState("");
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
   const { requireAuth } = useAuth();
 
   // Check if the user is authenticated before rendering the component
