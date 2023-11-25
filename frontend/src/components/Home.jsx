@@ -1,12 +1,6 @@
 // Home.jsx
 import React, { useState, useEffect } from "react";
-import {
-  Link,
-  Routes,
-  Route,
-  BrowserRouter as Router,
-  useNavigate,
-} from "react-router-dom";
+import {Link,useNavigate} from "react-router-dom"; //Routes,Route,BrowserRouter as Router
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Home.css";
 import {
@@ -26,13 +20,13 @@ function Home() {
   const { requireAuth } = useAuth();
 
   // Check if the user is authenticated before rendering the component
-  requireAuth();
+ // requireAuth();
 
   useEffect(() => {
     fetchAllStocksData();
   }, []);
 
-  const navigate = useNavigate();
+// const navigate = useNavigate();
 
   const fetchAllStocksData = async () => {
     try {
