@@ -11,7 +11,7 @@ const AddStock = () => {
   const [stockSupplier, setSupplier] = useState("");
   const [orderCompletionDate, setOcd] = useState("");
   const [stockStatus, setStatus] = useState("active");
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
   const { requireAuth } = useAuth();
 
   useEffect(() => {
