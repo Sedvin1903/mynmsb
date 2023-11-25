@@ -51,7 +51,7 @@ export const addStock = async (data) => {
 // Function to update an existing stock
 export const updateStock = async (stockId, data) => {
   try {
-    await axios.put(https://sias-backend.onrender.com:8081/api/v1/stock/edit/${stockId}`, data);
+    await axios.put(`https://sias-backend.onrender.com:8081/api/v1/stock/edit/${stockId}`, data);
   } catch (error) {
     console.error("Error updating stock:", error);
     throw error;
