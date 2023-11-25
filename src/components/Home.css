@@ -1,0 +1,18 @@
+/* Add this to your CSS file or use inline styles */
+
+.bg-success {
+  background-color: #28a745; /* Green background color */
+  border-radius: 20px; /* Smaller rounded corners */
+  padding: 3px 8px; /* Adjust padding for smaller size */
+}
+
+.bg-danger {
+  background-color: #dc3545; /* Red background color */
+  border-radius: 20px; /* Smaller rounded corners */
+  padding: 3px 8px; /* Adjust padding for smaller size */
+}
+
+.text-white {
+  color: #fff; /* White text color */
+  text-align: center;
+}

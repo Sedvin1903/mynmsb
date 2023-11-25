@@ -1,0 +1,13 @@
+.status-active {
+  background-color: green;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.status-outOfStock {
+  background-color: red;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+}
