@@ -20,13 +20,15 @@ const DeleteStock = () => {
       console.log(response1);
       if (response1 === "null") {
         alert("Stock Not Found!");
-      } else {
-    /*    const response2 = await deleteStock(stockId);
+      } 
+      else {
+        //const response2 = await deleteStock(stockId);
         alert("Stock deleted successfully!");
-      }*/
+      }
 
       resetForm();
-    } catch (err) {
+    } 
+    catch (err) {
       console.error("Error deleting stock:", err);
       alert("Error deleting stock: " + err.message);
     }
