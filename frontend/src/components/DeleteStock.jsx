@@ -23,8 +23,7 @@ const DeleteStock = () => {
       } 
       else {
       const response2 = await deleteStock(stockId);
-         if (response2)
-         {alert("Stock deleted successfully!");}
+  alert("Stock deleted successfully!");
       }
 
       resetForm();
