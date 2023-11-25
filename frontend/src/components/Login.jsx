@@ -7,7 +7,7 @@ function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  const { isAuthenticated } = useAuth(); // Import isAuthenticated function
+ // const { isAuthenticated } = useAuth(); // Import isAuthenticated function
 
   const handleLogin = () => {
     // Replace with actual authentication logic
