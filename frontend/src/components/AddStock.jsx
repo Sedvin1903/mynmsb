@@ -1,6 +1,7 @@
+// addStock.jsx
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { addStock } from "../service/service";
+import { addStock, searchStockById } from "../service/service"; // Import searchStockById
 import useAuth from "../service/useAuth";
 
 const AddStock = () => {
@@ -11,7 +12,7 @@ const AddStock = () => {
   const [stockSupplier, setSupplier] = useState("");
   const [orderCompletionDate, setOcd] = useState("");
   const [stockStatus, setStatus] = useState("active");
-  //const navigate = useNavigate();
+
   const { requireAuth } = useAuth();
 
   useEffect(() => {
@@ -21,6 +22,20 @@ const AddStock = () => {
   async function save(event) {
     event.preventDefault();
 
+    console.log(stockId);
+    if (
+      stockId === "" ||
+      stockName === "" ||
+      stockPrice === "" ||
+      stockQuantity === "" ||
+      stockSupplier === "" ||
+      orderCompletionDate === "" ||
+      stockStatus === ""
+    ) {
+      alert("Please fill all the fields!");
+      return;
+    }
+
     // Validate stockId
     if (!/^\d{6}$/.test(stockId)) {
       alert("Stock ID should be a 6-digit number.");
@@ -28,22 +43,6 @@ const AddStock = () => {
     }
 
     // Validate other fields
-    if (!stockName.trim()) {
-      alert("Stock Name is required.");
-      return;
-    }
-
-    if (isNaN(parseFloat(stockPrice)) || parseFloat(stockPrice) <= 0) {
-      alert("Invalid Stock Price. Please enter a valid positive number.");
-      return;
-    }
-
-    if (isNaN(parseInt(stockQuantity)) || parseInt(stockQuantity) <= 0) {
-      alert("Invalid Stock Quantity. Please enter a valid positive integer.");
-      return;
-    }
-
-    // Additional validation checks for other fields can be added here
 
     const calculatedAmt = parseFloat(stockPrice) * parseInt(stockQuantity);
 
@@ -58,12 +57,22 @@ const AddStock = () => {
       status: stockStatus,
     };
 
+    // Check if stockId is already present
     try {
-      await addStock(data);
-      alert("Stock added Successfully");
-      resetForm();
-    } catch (err) {
-      console.error("Error adding stock:", err);
+      const existingStock = await searchStockById(stockId);
+      //console.log(existingStock);
+      if (existingStock !== "null") {
+        alert("Stock ID already exists. Please choose a different Stock ID.");
+        resetForm();
+        return;
+      } else {
+        await addStock(data);
+        alert("Stock added Successfully");
+        resetForm();
+      }
+    } catch (error) {
+      console.error("Error checking existing stock:", error);
+      return;
     }
   }
 
@@ -79,34 +88,52 @@ const AddStock = () => {
 
   return (
     <div>
+      {/* Responsive Navigation bar */}
       <nav
-        className="navbar navbar-light"
+        className="navbar navbar-expand-lg navbar-light"
         style={{ backgroundColor: "#485c7f" }}
       >
         <div className="container-fluid">
           <Link to="/home" className="navbar-brand text-white">
             StockEasy
           </Link>
-          <div className="d-flex align-items-center">
-            <Link to="/home" className="nav-link me-3 text-white">
-              Home
-            </Link>
-            <Link to="/update" className="nav-link me-3 text-white">
-              Update Stocks
-            </Link>
-            <Link to="/delete" className="nav-link me-3 text-white">
-              Delete Stocks
-            </Link>
-            <Link to="/" className="btn btn-light me-3 rounded-pill">
-              Logout
-            </Link>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <div className="navbar-nav ms-auto">
+              {" "}
+              {/* "ms-auto" pushes the links to the right */}
+              <Link to="/home" className="nav-link text-white">
+                Home
+              </Link>
+              <Link to="/update" className="nav-link text-white">
+                Update Stocks
+              </Link>
+              <Link to="/delete" className="nav-link text-white">
+                Delete Stocks
+              </Link>
+              <Link to="/" className="btn btn-light rounded-pill">
+                Logout
+              </Link>
+            </div>
           </div>
         </div>
       </nav>
 
+      {/* Form Container */}
       <div className="container mt-5 stock-container">
         <h1 className="text-center mb-4">Add Stocks</h1>
         <form>
+          {/* Form Fields */}
           <div className="form-group">
             <label>Stock ID</label>
             <input
@@ -174,9 +201,12 @@ const AddStock = () => {
             </select>
           </div>
 
-          <button className="btn btn-primary col-2" onClick={save}>
-            Add Stock
-          </button>
+          {/* Submit Button */}
+          <div className="d-flex justify-content-center">
+            <button className="btn btn-primary col-12 col-md-3" onClick={save}>
+              Add Stock
+            </button>
+          </div>
         </form>
       </div>
     </div>
