@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css"; // Import your custom styles
-//import useAuth from "../service/useAuth";
+// import useAuth from "../service/useAuth";
 
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
- // const { isAuthenticated } = useAuth(); // Import isAuthenticated function
+  // const { isAuthenticated } = useAuth(); // Import isAuthenticated function
 
   const handleLogin = () => {
     // Replace with actual authentication logic
@@ -20,7 +20,7 @@ function Login() {
   };
 
   return (
-    <div className="login-container mt-5">
+    <div className="login-container">
       <div className="login-card">
         <div className="card-body">
           <h3 className="card-title text-center">Login</h3>
