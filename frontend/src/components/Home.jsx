@@ -7,7 +7,7 @@ import {
   searchStockById,
   getStatusColor,
 } from "../service/service";
-import useAuth from "../service/useAuth";
+//import useAuth from "../service/useAuth";
 
 function Home() {
   const [searchQuery, setSearchQuery] = useState("");
