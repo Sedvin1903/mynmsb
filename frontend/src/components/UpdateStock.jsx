@@ -13,7 +13,6 @@ const UpdateStock = () => {
     stockPrice: 0,
     stockQuantity: 0,
   });
-//  const navigate = useNavigate();
   const { requireAuth } = useAuth();
 
   useEffect(() => {
@@ -30,6 +29,7 @@ const UpdateStock = () => {
   function handleStockIdChange(event) {
     setId(event.target.value);
   }
+
   const fetchStockDetails = async () => {
     try {
       const stockDetails = await searchStockById(stockId);
@@ -39,8 +39,8 @@ const UpdateStock = () => {
         resetForm();
       } else {
         setStockDetails(stockDetails);
-        setUpdatedStockDetails({ ...stockDetails }); // Copy the details for updates
-        setShowUpdateButton(true); // Show the update button after fetching details
+        setUpdatedStockDetails({ ...stockDetails });
+        setShowUpdateButton(true);
         setPriceQuantity({
           stockPrice: stockDetails.stockPrice,
           stockQuantity: stockDetails.stockQuantity,
@@ -60,7 +60,6 @@ const UpdateStock = () => {
         [index]: value,
       };
 
-      // Update stockAmt if stockQuantity or stockPrice changes
       if (index === "stockQuantity" || index === "stockPrice") {
         updatedDetails.stockAmt =
           updatedDetails.stockQuantity * updatedDetails.stockPrice;
@@ -93,36 +92,53 @@ const UpdateStock = () => {
     setId("");
     setStockDetails(null);
     setUpdatedStockDetails(null);
-    setShowUpdateButton(false); // Hide the update button after resetting the form
+    setShowUpdateButton(false);
   }
 
   return (
     <div>
+      {/* Responsive Navigation bar */}
       <nav
-        className="navbar navbar-light"
+        className="navbar navbar-expand-lg navbar-light"
         style={{ backgroundColor: "#485c7f" }}
       >
         <div className="container-fluid">
           <Link to="/home" className="navbar-brand text-white">
             StockEasy
           </Link>
-          <div className="d-flex align-items-center">
-            <Link to="/home" className="nav-link me-3 text-white">
-              Home
-            </Link>
-            <Link to="/add" className="nav-link me-3 text-white">
-              Add Stocks
-            </Link>
-            <Link to="/delete" className="nav-link me-3 text-white">
-              Delete Stocks
-            </Link>
-            <Link to="/" className="btn btn-light me-3 rounded-pill">
-              Logout
-            </Link>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <div className="navbar-nav ms-auto">
+              {" "}
+              {/* "ms-auto" pushes the links to the right */}
+              <Link to="/home" className="nav-link text-white">
+                Home
+              </Link>
+              <Link to="/add" className="nav-link text-white">
+                Add Stocks
+              </Link>
+              <Link to="/delete" className="nav-link text-white">
+                Delete Stocks
+              </Link>
+              <Link to="/" className="btn btn-light rounded-pill">
+                Logout
+              </Link>
+            </div>
           </div>
         </div>
       </nav>
 
+      {/* Form Container */}
       <div className="container mt-5 stock-container">
         <h1 className="text-center mb-4">Update Stocks</h1>
         <div>
@@ -135,9 +151,14 @@ const UpdateStock = () => {
               onChange={handleStockIdChange}
             />
           </div>
-          <button className="btn btn-primary col-2" onClick={fetchStockDetails}>
-            Fetch Stock Details
-          </button>
+          <div className="d-flex justify-content-center">
+            <button
+              className="btn btn-primary col-12 col-md-3"
+              onClick={fetchStockDetails}
+            >
+              Fetch Stock Details
+            </button>
+          </div>
 
           <br />
           <br />
@@ -251,12 +272,14 @@ const UpdateStock = () => {
                   )}
                 </tbody>
               </table>
-              <button
-                className="btn btn-primary col-2"
-                onClick={updateStockData}
-              >
-                Update Stock
-              </button>
+              <div className="d-flex justify-content-center">
+                <button
+                  className="btn btn-primary col-12 col-md-3"
+                  onClick={updateStockData}
+                >
+                  Update Stock
+                </button>
+              </div>
             </>
           )}
         </div>
