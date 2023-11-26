@@ -14,7 +14,7 @@ const DeleteStock = () => {
     requireAuth();
   }, [requireAuth]);
 
-  async function deleteStockData() {
+   const deleteStockData = async () => {
     try {
       const response1 = await searchStockById(stockId);
      // console.log(response1);
