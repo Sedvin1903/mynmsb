@@ -97,6 +97,7 @@ const DeleteStock = () => {
 
           <div className="d-flex justify-content-center">
             <button
+              type="button"
               className="btn btn-danger col-12 col-md-2"
               onClick={deleteStockData}
             >
