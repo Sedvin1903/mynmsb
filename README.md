@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# Naan Mudhalvan - Full Stack Web Development with Java 
+## Stock Inventory Application System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description:
+The Stock Inventory Management System simplifies inventory management for businesses with user-friendly features like adding, updating, deleting, and searching stocks. It offers real-time visibility into stock levels, efficient movement tracking, and streamlines stock ordering.
 
-## Available Scripts
+### Testing Credentials:
+UserName : admin  <br>
+Password : admin@123
 
-In the project directory, you can run:
+#### Deployment Link : https://stockvault.netlify.app/
 
-### `npm start`
+## Team Members:
+| Name                 | Roll Number       | Year             | Batch             |
+|----------------------|-------------------|------------------|-------------------|
+| **Ashik Sharon M**   | 311120104010      | IV               | 2020-2024         |
+| **Sedric F R**       | 311120104054      | IV               | 2020-2024         |
+| **Hari Raja H**      | 311120104019      | IV               | 2020-2024         |
+| **Kesavardhan S**    | 311120104028      | IV               | 2020-2024         |
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Output Screenshots:
 
-### `npm test`
+Login page:
+![image](https://github.com/ashiksharonm/nm-licet-group6/assets/80738185/40ec12d4-0ab0-4bce-9b02-385f87f295e4)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+Home page:
+![image](https://github.com/ashiksharonm/nm-licet-group6/assets/80738185/074e72e3-1978-435c-b959-ef6b729f5be4)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Add Stocks:
+![image](https://github.com/ashiksharonm/nm-licet-group6/assets/80738185/c0892218-1d7a-40d9-8819-313fe580bcd2)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![image](https://github.com/ashiksharonm/nm-licet-group6/assets/80738185/0180be35-7103-4805-b293-4010029ea9e2)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Update Stocks:
+![image](https://github.com/ashiksharonm/nm-licet-group6/assets/80738185/ad669c19-e7c3-4247-9069-b3eb0dcfee5a)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![image](https://github.com/ashiksharonm/nm-licet-group6/assets/80738185/e1a461e6-0384-4b1d-8b24-4d73ecddaa0f)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Delete Stocks:
+![image](https://github.com/ashiksharonm/nm-licet-group6/assets/80738185/642480f3-2e73-462c-b06e-9b350fabeda2)
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Search Stocks:
+![image](https://github.com/ashiksharonm/nm-licet-group6/assets/80738185/71334d42-e380-44c0-a59d-9dbadb00b973)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
